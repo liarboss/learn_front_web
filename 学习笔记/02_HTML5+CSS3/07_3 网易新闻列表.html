@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="./css/reset.css">
+<style>
+  body {
+    background-color: #ddeedd;
+  }
+  
+  a {
+    /* 去除超链接样式 */
+    text-decoration: none;
+  }
+  
+  /* ====================整体==================== */
+  .news_money {
+    /* 整体布局 */
+    width: 300px;
+    height: 324px;
+    margin: 35px auto;
+    background-color: #fff;
+  }
+  
+  
+  
+  /* ====================标题==================== */
+  .news_title {
+    height: 40px;
+    border-top: 1px #ddeedd solid;
+  }
+  
+  .news_title .title {
+    /* 标题整体布局 */
+    width: 32px;
+    height: 24px;
+    line-height: 24px;
+    padding-top: 6px;
+    border-top: 1px #f34540 solid;
+    margin-top: -1px;
+  }
+  
+  .news_title a {
+    /* 标题字体样式 */
+    font-size: 16px;
+    font-weight: bold;
+    color: #404040;
+  }
+  
+  .news_title a:hover {
+    /* 标题悬浮样式 */
+    color: red;
+  }
+  
+  /* ====================图片==================== */
+  .new_img {
+    height: 150px;
+  }
+  
+  .news_img:hover {
+    /* 
+    图片悬浮样式
+    这部分知识还没有学习到，所以只是做了一个简单的放大效果
+    但现在的效果其实是不对的，标题文字也被放大了
+    */
+    transform: scale(1.1);
+  }
+  
+  /* 图片标题 */
+  .news_img .img_title {
+    /* 图片标题整体布局 */
+    height: 40px;
+    line-height: 40px;
+    padding-left: 30px;
+    margin-top: -40px;
+  }
+  
+  .news_img a {
+    /* 图片标题字体样式 */
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* ====================新闻列表==================== */
+  .news_list {
+    height: 120px;
+    margin-top: 12px;
+  }
+  
+  .news_list li {
+    /* 新闻列表整体布局 */
+    width: 285px;
+    height: 30px;
+    line-height: 30px;
+    /* padding-left: 15px; */
+  }
+  
+  .news_list li a {
+    /* 新闻列表字体样式 */
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .news_list li a::before {
+    content: '■';
+    font-size: 2px;
+    color: rgb(226, 225, 225);
+    margin-right: 4px;
+  }
+  
+  .news_list a:hover {
+    /* 新闻列表悬浮样式 */
+    color: red;
+  }
+</style>
+<div class="news_money">
+    <div class="news_title">
+        <h2 class="title"><a href="#">财经</a></h2>
+    </div>
+    <div class="news_img">
+        <a href="#">
+            <img width="300" height="150" alt="楼市＂加息潮＂来了?" src="img/1.jpg">
+            <div class="img_title">
+                <h3>楼市"加息潮"来了?</h3>
+            </div>
+        </a>
+    </div>
+    <ul class="news_list">
+        <li>
+            <a href="#">太疯狂！1000万芯片投资 "换来"7个涨停</a>
+        </li>
+        <li>
+            <a href="#">重磅定调！打击比特币挖矿和交易行为</a>
+        </li>
+        <li>
+            <a href="#">拜登愿将基建规模砍去6000亿美元</a>
+        </li>
+        <li>
+            <a href="#">呷哺呷哺高管大换血 经营模式要变？</a>
+        </li>
+    </ul>
+</div>
