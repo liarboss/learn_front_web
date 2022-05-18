@@ -1,0 +1,59 @@
+<!-- <div></div>
+<p>
+    我是文字
+    <span>123</span>
+</p>
+<script>
+    // 1. innerText 不识别html标签 非标准  去除空格和换行
+    var div = document.querySelector('div');
+    // div.innerText = '<strong>今天是：</strong> 2019';
+
+    // 2. innerHTML 识别html标签 W3C标准 保留空格和换行的
+    div.innerHTML = '<strong>今天是：</strong> 2019';
+    // 这两个属性是可读写的  可以获取元素里面的内容
+    var p = document.querySelector('p');
+    console.log(p.innerText);
+    console.log(p.innerHTML);
+</script>
+
+
+<button id="ldh">刘德华</button>
+<button id="zxy">张学友</button> <br>
+<img src="img/1.jpg" alt="" title="刘德华">
+
+<script>
+    // 修改元素属性  src
+    // 1. 获取元素
+    var ldh = document.getElementById('ldh');
+    var zxy = document.getElementById('zxy');
+    var img = document.querySelector('img');
+    // 2. 注册事件  处理程序
+    zxy.onclick = function () {
+        img.src = 'img/1.jpg';
+        img.title = '张学友';
+    }
+    ldh.onclick = function () {
+        img.src = 'img/2.jpg';
+        img.title = '刘德华';
+    }
+</script> -->
+
+
+<button>按钮</button>
+<input type="text" value="输入内容">
+<script>
+    // 1. 获取元素
+    var btn = document.querySelector('button');
+    var input = document.querySelector('input');
+    // 2. 注册事件 处理程序
+    btn.onclick = function () {
+        // input.innerHTML = '点击了';  这个是 普通盒子 比如 div 标签里面的内容
+        // 表单里面的值 文字内容是通过 value 来修改的
+        input.value = '被点击了';
+        // 如果想要某个表单被禁用 不能再点击 disabled  我们想要这个按钮 button禁用
+        // btn.disabled = true;
+        this.disabled = true;
+
+        // this 指向的是事件函数的调用者 btn
+    }
+</script>
