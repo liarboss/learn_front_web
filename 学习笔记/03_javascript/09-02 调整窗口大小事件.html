@@ -1,0 +1,25 @@
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+</style>
+
+<script>
+    window.addEventListener('load', function () {
+        var div = document.querySelector('div');
+        window.addEventListener('resize', function () {
+            console.log(window.innerWidth);
+
+            console.log('变化了');
+            if (window.innerWidth <= 800) { // innerWidth 浏览器窗口宽度
+                div.style.display = 'none';
+            } else {
+                div.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+<div></div>
