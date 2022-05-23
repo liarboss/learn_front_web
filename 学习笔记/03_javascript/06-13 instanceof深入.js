@@ -12,3 +12,4 @@ console.log(Function instanceof Function) // true
 console.log(Function instanceof Object)		// true
 function Foo() { }
 console.log(Object instanceof Foo) // false
+console.log(Foo instanceof Object)
