@@ -1,0 +1,23 @@
+<script src="./js/jquery-3.6.0.min.js"></script>
+<style>
+  div {width: 150px;height: 300px;background-color: pink;display: none;}
+</style>
+
+<button>下拉滑动</button>
+<button>上拉滑动</button>
+<button>切换滑动</button>
+<div></div>
+
+<script>
+  $(function() {
+    $("button").eq(0).click(function() {
+      $("div").slideDown(); // 下滑动 slideDown()
+    })
+    $("button").eq(1).click(function() {
+      $("div").slideUp(500); // 上滑动 slideUp()
+    })
+    $("button").eq(2).click(function() {
+      $("div").slideToggle(500); // 滑动切换 slideToggle()
+    });
+  });
+</script>

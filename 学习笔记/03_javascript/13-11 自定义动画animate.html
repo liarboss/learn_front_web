@@ -1,0 +1,24 @@
+<script src="./js/jquery-3.6.0.min.js"></script>
+<style>
+    div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+</style>
+
+<button>动起来</button>
+<div></div>
+<script>
+    $(function () {
+        $("button").click(function () {
+            $("div").animate({
+                left: 500,
+                top: 300,
+                opacity: .4,
+                width: 500
+            }, 500);
+        })
+    })
+</script>
