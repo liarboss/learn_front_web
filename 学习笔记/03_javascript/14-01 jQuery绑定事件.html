@@ -1,0 +1,151 @@
+<script src="./js/jquery-3.6.0.min.js"></script>
+
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+
+    .current {
+        background-color: purple;
+    }
+</style>
+
+<div></div>
+<ul>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+</ul>
+<ol>
+</ol>
+
+<script>
+    $(function () {
+        // 1. 单个事件注册
+        // $("div").click(function() {
+        //     $(this).css("background", "purple");
+        // });
+        // $("div").mouseenter(function() {
+        //     $(this).css("background", "skyblue");
+        // });
+
+        // 2. 事件处理on
+        // (1) on可以绑定1个或者多个事件处理程序
+        $("div").on({
+            mouseenter: function () {
+                $(this).css("background", "skyblue");
+            },
+            click: function () {
+                $(this).css("background", "purple");
+            },
+            mouseleave: function () {
+                $(this).css("background", "blue");
+            }
+        });
+
+        // 或者 多个事件中间用空格隔开
+        $("div").on("mouseenter mouseleave", function () {
+            $(this).toggleClass("current");
+        });
+
+        // (2) on可以实现事件委托（委派）
+        // click 是绑定在ul 身上的，但是 触发的对象是 ul 里面的小li
+        // $("ul li").click();
+        $("ul").on("click", "li", function () {
+            alert(11);
+        });
+
+        // (3) on可以给未来动态创建的元素绑定事件
+        // $("ol li").click(function() { 这种不行
+        //     alert(11);
+        // })
+        $("ol").on("click", "li", function () {
+            alert(11);
+        })
+        var li = $("<li>我是后来创建的</li>");
+        $("ol").append(li);
+    })
+</script>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    ul {
+        list-style: none
+    }
+
+    .box {
+        width: 600px;
+        margin: 100px auto;
+        border: 1px solid #000;
+        padding: 20px;
+    }
+
+    textarea {
+        width: 450px;
+        height: 160px;
+        outline: none;
+        resize: none;
+    }
+
+    ul {
+        width: 450px;
+        padding-left: 80px;
+    }
+
+    ul li {
+        line-height: 25px;
+        border-bottom: 1px dashed #cccccc;
+        display: none;
+    }
+
+    input {
+        float: right;
+    }
+
+    ul li a {
+        float: right;
+    }
+</style>
+
+<script>
+    $(function () {
+        // 1.点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul 中
+        $(".btn").click(function () {
+            if ($(".txt").val() != "") {
+                var li = $("<li></li>");
+                li.html($(".txt").val() + "<a>删除</a>");
+                $("ul").prepend(li)
+                li.stop().slideDown();
+                $(".txt").val("");
+            }
+        });
+
+        // 2.点击的删除按钮，可以删除当前的微博留言li
+        // $("ul a").click(function() {  // 此时的click不能给动态创建的a添加事件
+        //     alert(11);
+        // })
+        // on可以给动态创建的元素绑定事件
+        $("ul").on("click", "a", function () {
+            $(this).parent().slideUp(function () {
+                $(this).remove();
+            });
+        })
+    })
+</script>
+
+<div class="box" id="weibo">
+    <span>微博发布</span>
+    <textarea name="" class="txt" cols="30" rows="10"></textarea>
+    <button class="btn">发布</button>
+    <ul>
+    </ul>
+</div>
