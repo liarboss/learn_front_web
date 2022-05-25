@@ -1,0 +1,25 @@
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background: #58a;
+    }
+</style>
+
+<div id="ad"></div>
+
+<script>
+    let ad = document.getElementById('ad')
+
+    ad.addEventListener("click", function () {
+        //保存 this 的值
+        // let _this = this;
+        setTimeout(() => {
+            // console.log(this);
+            // _this.style.background = 'pink';
+            this.style.background = 'pink';
+        }, 2000);
+    })
+
+    
+</script>
