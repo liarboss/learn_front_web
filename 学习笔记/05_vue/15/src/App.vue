@@ -6,6 +6,8 @@
         <MyList :todos="todos" :checkTodo="checkTodo" :deleteTodo="deleteTodo"/>
         <MyFooter :todos="todos" 
                   :checkAllTodo="checkAllTodo" :clearAllTodo="clearAllTodo"/>
+        <h1>======================組件自定義事件==========================================================</h1>  
+
     	</div>
     </div>
   </div>
