@@ -22,6 +22,7 @@ export default {
   methods: {
     showName() { alert(this.name); },
     test() {
+      // 這個是插件裡的方法
       this.hello()
     }
   },

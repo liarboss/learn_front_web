@@ -20,7 +20,8 @@ export default {
   methods: {
     showName() { alert(this.name); },
     test() {
-      this.hello()
+      alert(this.address); 
+      // this.hello()
     }
   }
 };
